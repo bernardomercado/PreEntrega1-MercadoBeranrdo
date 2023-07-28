@@ -35,3 +35,33 @@ class ProductManager {
       return product;
     }
 }
+
+// Ejemplo:
+
+const manager = new ProductManager();
+
+console.log(manager.getProducts()); // Debe devolver un arreglo vacío []
+
+manager.addProduct({
+  title: 'producto prueba',
+  description: 'Este es un producto prueba',
+  price: 200,
+  thumbnail: 'Sin imagen',
+  code: 'abc123',
+  stock: 25,
+});
+
+console.log(manager.getProducts()); // Debe devolver el producto recién agregado con ID
+
+manager.addProduct({
+  title: 'producto prueba',
+  description: 'Este es un producto prueba',
+  price: 200,
+  thumbnail: 'Sin imagen',
+  code: 'abc123',
+  stock: 25,
+});
+
+
+const productById = manager.getProductById(2); // Debe arrojar un error "Not found" ya que el producto con id 2 no existe
+console.log(productById);
